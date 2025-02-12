@@ -1,4 +1,3 @@
-
 name: Auto-Publish HackerRank Solutions
 
 on:
@@ -15,8 +14,8 @@ jobs:
       - name: Checkout Main Repo
         uses: actions/checkout@v3
 
-      - name: Clone HackerRank Solutions Repo
-        run: git clone https://github.com/shreyas353/hackerrank_problems.git ~/hackerrank
+      - name: Clone HackerRank Solutions Repo with Authentication
+        run: git clone https://${{ secrets.GH_PAT }}@github.com/shreyas353/hackerrank_problems.git ~/hackerrank
 
       - name: Sync HackerRank Solutions
         run: |
